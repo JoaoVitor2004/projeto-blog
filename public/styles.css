@@ -18,6 +18,10 @@ ul {
 main {
     padding: 5%;
 
+    .title-main {
+        font-size: 60px;
+    }
+
     a {
         text-decoration: none;
     }
