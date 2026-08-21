@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <main>
+        <h1 class="title-main mb-4 fs-1 font-bold">Blog</h1>
+        <a href="/create">
+            <button class="btn btn-primary mb-5">Criar post</button>
+        </a>
+        <ul class="w-100 d-flex flex-direction-column posts">
+            <%posts.forEach(post=> { %>
+                <li>
+                    <div>
+                        <h3 class="fs-1 fw-bold mb-3">
+                            <%= post.title %>
+                        </h3>
+                        <p class="mb-4">
+                            <%= post.content %>
+                        </p>
+                        <p class="mb-3">
+                            Criado em: <strong>
+                                <%= post.createdAt %>
+                            </strong>
+                        </p>
+                        <div class="d-flex gap-3">
+                            <form action="/delete/<%= post.id %>" method="post">
+                                <input class="btn btn-danger" type="submit" value="Excluir">
+                            </form>
+                            <a href="/edit">
+                                <button class="btn btn-dark">Editar</button>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <% }); %>
+        </ul>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

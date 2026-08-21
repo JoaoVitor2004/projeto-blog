@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/form.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <main>
+        <div class="d-flex gap-3 align-items-center mb-5">
+            <h2 class="fs-1 fw-bold text-form">Edite um post</h2>
+            <a href="/">
+                <button class="btn btn-primary">Voltar</button>
+            </a>
+        </div>
+        <form action="/update/<%= post.id %>" method="post">
+            <div class="container">
+                <label for="title" class="form-label">Título</label>
+                <input type="text" class="form-control" id="title" name="title" value="<%= post.title %>" required placeholder="Digite um titulo">
+            </div>
+            <div class="container">
+                <label for="content" class="form-label">Descrição</label>
+                <input type="text" class="form-control" id="content" name="content" value="<%= post.content %>" required
+                    placeholder="Digite uma descrição">
+            </div>
+            <div class="d-flex gap-3">
+                <button type="submit" class="btn btn-success">Enviar</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

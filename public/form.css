@@ -1,0 +1,19 @@
+.text-form {
+    font-size: 40px;
+}
+
+form {
+
+    .container {
+        margin: 0 0 30px 0;
+    }
+
+    label {
+        margin-bottom: 15px;
+    }
+
+    input {
+        padding: 12px;
+        border-radius: 25px;
+    }
+}
