@@ -29,5 +29,9 @@ main {
     .posts {
         padding: 0;
         gap: 80px;
+
+        @media (width < 768px) {
+            justify-content: center;
+        } 
     }
 }

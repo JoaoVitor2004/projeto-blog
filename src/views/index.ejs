@@ -16,7 +16,7 @@
         <a href="/create">
             <button class="btn btn-primary mb-5">Criar post</button>
         </a>
-        <ul class="w-100 d-flex flex-direction-column posts">
+        <ul class="w-100 d-flex flex-direction-column flex-wrap posts">
             <%posts.forEach(post=> { %>
                 <li>
                     <div>
@@ -35,7 +35,7 @@
                             <form action="/delete/<%= post.id %>" method="post">
                                 <input class="btn btn-danger" type="submit" value="Excluir">
                             </form>
-                            <a href="/edit">
+                            <a href="/edit/<%= post.id %>">
                                 <button class="btn btn-dark">Editar</button>
                             </a>
                         </div>

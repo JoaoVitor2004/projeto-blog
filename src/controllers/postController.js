@@ -17,15 +17,14 @@ const postController = {
         res.redirect("/")
     },
     edit: (req, res) => {
-        const posts = postModel.getAllPosts()
-        const post = posts.find((item) => item.id === item.id)
+        const id = req.params.id
+        const post = postModel.getPostById(id)
         res.render("edit", { post })
     },
     update: (req, res) => {
         const id = req.params.id
         const { title, content } = req.body
-        const newProp = { title, content }
-        postModel.updatePost(id, newProp)
+        postModel.updatePost(id, { title, content })
         res.redirect("/")
     },
     delete: (req, res) => {

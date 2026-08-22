@@ -4,6 +4,10 @@ const postModel = {
     getAllPosts: () => {
         return posts
     },
+    getPostById: (id) => {
+        const findPost = posts.find(item => item.id === id)
+        return findPost  
+    },
     createPosts: (title, content) => {
         const post = {
             id: String(Math.random() * 999),
